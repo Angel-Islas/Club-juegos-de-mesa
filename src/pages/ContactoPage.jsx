@@ -31,21 +31,24 @@ export default function ContactoPage() {
   }
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 py-8">
-      <div className="space-y-8">
+    <div className="min-h-screen bg-[#1e0c15] text-[#F4A4BB] py-12">
+      <div className="max-w-screen-xl mx-auto px-4 space-y-12">
+
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold">Contacto</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            ¿Quieres unirte al club? ¿Tienes dudas sobre nuestros eventos o juegos disponibles? ¡Estamos encantados de conocerte! Escríbenos y te responderemos pronto.
+          <h1 className="text-4xl md:text-5xl font-bold">Contacto</h1>
+          <p className="text-lg max-w-2xl mx-auto text-[#F4A4BB]/70">
+            ¿Quieres unirte al club? ¿Tienes dudas sobre nuestros eventos o juegos disponibles?
+            ¡Estamos encantados de conocerte! Escríbenos y te responderemos pronto.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+          
           {/* Contact Form */}
-          <div className="border rounded-lg shadow-md p-6">
-            <div className="mb-6 flex items-center gap-2 text-lg font-semibold">
-              <HiChatAlt2 className="h-5 w-5" />
+          <div className="bg-[#3c1e30] border border-[#F4A4BB]/30 rounded-xl shadow-lg p-6">
+            <div className="mb-6 flex items-center gap-2 text-lg font-semibold text-[#F4A4BB]">
+              <HiChatAlt2 className="h-5 w-5 text-[#E94977]" />
               <span>Escríbenos un mensaje</span>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -62,7 +65,7 @@ export default function ContactoPage() {
                     onChange={handleChange}
                     required
                     placeholder="Tu nombre completo"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary"
+                    className="w-full px-3 py-2 bg-[#1e0c15] border border-[#F4A4BB]/30 text-[#F4A4BB] rounded-md focus:outline-none focus:ring-2 focus:ring-[#E94977]"
                   />
                 </div>
                 <div className="space-y-2">
@@ -76,7 +79,7 @@ export default function ContactoPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Tu número de contacto"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary"
+                    className="w-full px-3 py-2 bg-[#1e0c15] border border-[#F4A4BB]/30 text-[#F4A4BB] rounded-md focus:outline-none focus:ring-2 focus:ring-[#E94977]"
                   />
                 </div>
               </div>
@@ -93,7 +96,7 @@ export default function ContactoPage() {
                   onChange={handleChange}
                   required
                   placeholder="tu@email.com"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary"
+                  className="w-full px-3 py-2 bg-[#1e0c15] border border-[#F4A4BB]/30 text-[#F4A4BB] rounded-md focus:outline-none focus:ring-2 focus:ring-[#E94977]"
                 />
               </div>
 
@@ -109,7 +112,7 @@ export default function ContactoPage() {
                   onChange={handleChange}
                   required
                   placeholder="¿En qué podemos ayudarte?"
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary"
+                  className="w-full px-3 py-2 bg-[#1e0c15] border border-[#F4A4BB]/30 text-[#F4A4BB] rounded-md focus:outline-none focus:ring-2 focus:ring-[#E94977]"
                 />
               </div>
 
@@ -125,38 +128,38 @@ export default function ContactoPage() {
                   required
                   placeholder="Cuéntanos cómo te gustaría participar, tus juegos favoritos o cualquier duda que tengas."
                   rows={5}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary resize-y"
+                  className="w-full px-3 py-2 bg-[#1e0c15] border border-[#F4A4BB]/30 text-[#F4A4BB] rounded-md focus:outline-none focus:ring-2 focus:ring-[#E94977] resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-3 rounded-md hover:bg-primary/90 transition"
+                className="w-full bg-[#E94977] text-white py-3 rounded-md hover:bg-[#E94977]/90 transition"
               >
                 Enviar Mensaje
               </button>
             </form>
           </div>
 
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="space-y-6">
-            <div className="border rounded-lg shadow-md p-6">
-              <div className="mb-4 text-lg font-semibold">Información del Club</div>
+            <div className="bg-[#3c1e30] border border-[#F4A4BB]/30 rounded-xl shadow-lg p-6">
+              <div className="mb-4 text-lg font-semibold text-[#F4A4BB]">Información del Club</div>
               <div className="space-y-6">
 
                 <div className="flex items-start gap-3">
-                  <HiMail className="h-5 w-5 text-primary mt-1" />
+                  <HiMail className="h-5 w-5 text-[#15B4D4] mt-1" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-muted-foreground">contacto@mesamagica.com</p>
+                    <p className="text-[#F4A4BB]/70">contacto@mesamagica.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <HiClock className="h-5 w-5 text-primary mt-1" />
+                  <HiClock className="h-5 w-5 text-[#15B4D4] mt-1" />
                   <div>
                     <h3 className="font-semibold">Horarios de Actividades</h3>
-                    <div className="text-muted-foreground space-y-1">
+                    <div className="text-[#F4A4BB]/70 space-y-1">
                       <p>Martes y Jueves: 18:00 - 21:00</p>
                       <p>Sábados: 16:00 - 20:00</p>
                       <p>Domingos: Sesiones especiales por evento</p>
@@ -166,12 +169,12 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            <div className="border rounded-lg shadow-md p-6">
-              <div className="mb-4 text-lg font-semibold">¿Te gustaría participar?</div>
-              <p className="text-muted-foreground mb-4">
+            <div className="bg-[#3c1e30] border border-[#F4A4BB]/30 rounded-xl shadow-lg p-6">
+              <div className="mb-4 text-lg font-semibold text-[#F4A4BB]">¿Te gustaría participar?</div>
+              <p className="text-[#F4A4BB]/70 mb-4">
                 En Mesa Mágica siempre estamos buscando nuevos miembros que compartan la pasión por los juegos de mesa. Puedes:
               </p>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm text-[#F4A4BB]/90">
                 <p>• Participar en nuestras sesiones semanales</p>
                 <p>• Unirte a torneos y eventos temáticos</p>
                 <p>• Proponer juegos para el catálogo</p>

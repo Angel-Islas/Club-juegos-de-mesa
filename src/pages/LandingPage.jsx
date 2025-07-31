@@ -1,31 +1,44 @@
 import { Link } from "react-router-dom"
 import { FaUsers, FaTrophy, FaHandsHelping } from "react-icons/fa"
+import Slider from "react-slick"
 
 export default function LandingPage() {
+
+  const juegos = [
+    { title: "Catan", image: "/catan.jpg" },
+    { title: "Ticket to Ride", image: "/ticket.jpg" },
+    { title: "Azul", image: "/azul.jpg" },
+    { title: "Carcassonne", image: "/carcassonne.jpg" },
+    { title: "7 Wonders", image: "/7wonders.jpg" },
+  ]
+
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  }
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-[#F4A4BB] bg-[#1e0c15]">
+
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <section className="relative py-20 md:py-32 bg-gradient-to-b from-[#3a1729] to-[#2C111F]">
         <div className="w-full max-w-screen-xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Descubre la
-              <span className="text-primary block">Magia de Compartir Juegos</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-lg">
-              Únete a nuestro club para disfrutar de sesiones de juegos de mesa, conocer nuevos amigos y vivir experiencias únicas
-              que fortalecen la comunidad y la diversión en cada partida.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* <Link to="/contacto">
-                <button className="px-6 py-3 rounded-md border text-lg font-medium hover:bg-muted transition">
-                  Contactar
-                </button>
-              </Link> */}
+            <div className="space-y-6 text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                Descubre la
+                <span className="text-[#69EAEC] block">Magia de Compartir Juegos</span>
+              </h1>
+              <p className="text-xl max-w-lg mx-auto lg:mx-0">
+                Únete a nuestro club para disfrutar de sesiones de juegos de mesa, conocer nuevos amigos y vivir experiencias únicas que fortalecen la comunidad.
+              </p>
             </div>
-        </div>
-
             <div className="relative">
               <img
                 src="/placeholder.svg"
@@ -40,112 +53,105 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#2C111F] to-[#1e0c15]">
         <div className="w-full max-w-screen-xl mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">¿Por qué unirse a Mesa Mágica?</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Somos un club apasionado por los juegos de mesa, reuniendo a jugadores para compartir
-            momentos divertidos, aprender nuevas estrategias y crear una comunidad amigable y activa.
-          </p>
-        </div>
-
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Comunidad Activa",
-              description:
-                "Un espacio donde jugadores de todos los semestres se reúnen para compartir partidas, experiencias y aprender juntos.",
-              icon: <FaUsers className="h-6 w-6 text-primary" />,
-            },
-            {
-              title: "Eventos y Torneos",
-              description:
-                "Organizamos encuentros y competencias para que siempre haya algo divertido que esperar y disfrutar.",
-              icon: <FaTrophy className="h-6 w-6 text-primary" />,
-            },
-            {
-              title: "Apoyo Personalizado",
-              description:
-                "Nuestro equipo está siempre listo para ayudarte no solo en juegos, sino en todo lo relacionado con la escuela.",
-              icon: <FaHandsHelping className="h-6 w-6 text-primary" />,
-            },
-          ].map((feature, index) => (
-            <div key={index} className="text-center p-6 border rounded-lg shadow-sm bg-background">
-              <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                {feature.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-
-        </div>
-      </section>
-
-      {/* Popular Games Preview */}
-      <section className="py-16 md:py-24">
-        <div className="w-full max-w-screen-xl mx-auto px-4">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Juegos Más Populares</h2>
-            <p className="text-xl text-muted-foreground">Descubre los favoritos de nuestros integrantes</p>
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">¿Por qué unirse a Mesa Mágica?</h2>
+            <p className="text-xl text-[#69EAEC] max-w-2xl mx-auto">
+              Reunimos a jugadores para compartir momentos divertidos, aprender nuevas estrategias y formar una comunidad activa.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Catan",
-                image: "/placeholder.svg"
+                title: "Comunidad Activa",
+                description:
+                  "Jugadores de todos los niveles se reúnen para compartir partidas, experiencias y crecer juntos.",
+                icon: <FaUsers className="h-6 w-6 text-[#E94977]" />,
               },
               {
-                title: "Ticket to Ride",
-                image: "/placeholder.svg"
+                title: "Eventos y Torneos",
+                description:
+                  "Encuentros regulares, competencias y desafíos para mantener la emoción constante.",
+                icon: <FaTrophy className="h-6 w-6 text-[#15B4D4]" />,
               },
               {
-                title: "Azul",
-                image: "/placeholder.svg"
+                title: "Apoyo Personalizado",
+                description:
+                  "Te acompañamos desde tus primeros pasos con los juegos hasta ayudarte en lo académico.",
+                icon: <FaHandsHelping className="h-6 w-6 text-[#10659E]" />,
               },
-            ].map((game, index) => (
-              <div key={index} className="overflow-hidden border rounded-lg bg-background shadow-sm">
-                <div className="relative aspect-square">
-                  <img src={game.image} alt={game.title} className="object-cover w-full h-full" />
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-xl bg-[#3c1e30] shadow-lg border border-[#F4A4BB]/20"
+              >
+                <div className="mx-auto w-12 h-12 bg-[#F4A4BB]/20 rounded-lg flex items-center justify-center mb-4">
+                  {feature.icon}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2 text-center">{game.title}</h3>
-                  <div className="flex items-center justify-between">
-                  </div>
-                </div>
+                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                <p className="text-sm text-[#F4A4BB]/80">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 text-primary-foreground">
-        <div className="w-full max-w-screen-xl mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">¿Listo para tu próxima aventura?</h2>
-            <p className="text-xl opacity-90">
-              Explora nuestro catálogo completo y encuentra el juego perfecto para ti y los tuyos.
+      {/* Popular Games Preview */}
+      <section className="py-20 md:py-28 bg-[#1e0c15] text-[#F4A4BB]">
+        <div className="w-full max-w-screen-xl mx-auto px-4 space-y-12 text-center">
+
+          {/* Título */}
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">Juegos Más Populares</h2>
+          </div>
+
+          {/* Carrusel */}
+          <div className="max-w-2xl mx-auto">
+            <Slider {...settings}>
+              {juegos.map((game, index) => (
+                <div key={index} className="px-4">
+                  <div className="overflow-hidden rounded-xl bg-[#3c1e30] shadow-lg border border-[#F4A4BB]/10">
+                    <div className="aspect-video">
+                      <img
+                        src={game.image}
+                        alt={game.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold">{game.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          {/* CTA */}
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-bold">¿Listo para tu próxima aventura?</h3>
+            <p className="text-lg max-w-xl mx-auto opacity-90">
+              Explora nuestro catálogo completo y encuentra el juego perfecto para ti.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/catalogo">
-                <button className="px-6 py-3 text-lg font-medium bg-secondary text-primary rounded-md hover:bg-secondary/90">
+                <button className="px-6 py-3 text-lg font-medium bg-[#E94977] text-white rounded-md hover:bg-[#F4A4BB] hover:text-[#921136] transition">
                   Explorar Catálogo
                 </button>
               </Link>
               <Link to="/contacto">
-                <button className="px-6 py-3 text-lg font-medium border border-primary-foreground text-primary-foreground rounded-md hover:bg-primary-foreground hover:text-primary bg-transparent">
+                <button className="px-6 py-3 text-lg font-medium border border-[#F4A4BB] text-[#F4A4BB] rounded-md hover:bg-[#F4A4BB] hover:text-[#921136] transition">
                   Contactar
                 </button>
               </Link>
             </div>
           </div>
+
         </div>
       </section>
+
     </div>
   )
 }
